@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TaxApp"
+             x:Class="TaxApp.MainPage">
+
+    <StackLayout Padding="20">
+        <Label Text="Geben Sie einen Brutto- oder Nettobetrag ein und lassen Sie sich die Umsatzsteuer errechnen."
+               Margin="0,20,0,10"/>
+
+        <Entry x:Name="AmountEntry"
+               Placeholder="Eingabe"
+               Keyboard="Numeric"
+               Margin="0,0,0,10"/>
+
+        <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+            <RadioButton x:Name="NettoRadioButton" Content="Netto" IsChecked="True"/>
+            <RadioButton x:Name="BruttoRadioButton" Content="Brutto" Margin="20,0,0,0"/>
+        </StackLayout>
+
+        <Picker x:Name="TaxRatePicker"  Margin="0,0,0,10">
+            <Picker.Items>
+                <x:String>8 Prozent</x:String>
+                <x:String>3.5 Prozent</x:String>
+                <x:String>2.5 Prozent</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Button Text="Berechnen" Clicked="OnCalculateClicked"/>
+
+        <Label x:Name="ResultLabel" FontAttributes="Bold" Margin="0,20,0,0"/>
+    </StackLayout>
+
+</ContentPage>
